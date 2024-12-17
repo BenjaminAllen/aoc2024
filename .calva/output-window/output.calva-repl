@@ -1,0 +1,4276 @@
+; This is the Calva REPL Window.
+; It's just a file, really, with some special treatment from Calva.
+; Use it as a REPL input prompt if you like. (When the REPL is connected.)
+; TIPS: The keyboard shortcut `ctrl+alt+o r` shows and focuses this window
+; Please see https://calva.io/repl-window/ for more info.
+; Happy coding! ♥️
+
+; TIPS: As with any Clojure file when the REPL is connected:
+; - `alt+enter` evaluates the current top level form.
+; - `ctrl+enter` evaluates the current form.
+; Special for this file:
+; - `alt+up` and `alt+down` traverse up and down the REPL command history
+;    when the cursor is after the last contents at the prompt
+; 
+; See also the Calva Inspector: https://calva.io/inspector/
+
+PLEASE NOTE
+We will update the default location of this file.
+The new default location will be
+  "<projectRootPath>/.calva/repl.calva-repl"
+For now the legacy path is used by default.
+To give yourself a smooth transition, you can opt in
+to the change, by configuring this setting as false:
+  "calva.useLegacyReplWindowPath"
+and then add "**/.calva/repl.calva-repl" to your ".gitignore" file.
+
+
+This file is configured as the output destination for all REPL output.
+You can configure this with the setting:
+  "calva.outputDestinations"
+
+
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/maw/Projects/aoc2024; lein update-in :dependencies conj '[nrepl,"1.1.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.47.1"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:44737 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉aoc2024.core꞉> 
+"Please see https://calva.io/output/#about-stdout-in-the-repl-window
+about why stdout printed to this file is prepended with `;` to be line comments."
+clj꞉aoc2024.core꞉> 
+; Jack-in done.
+clj꞉aoc2024.core꞉> 
+#'aoc2024.day3/example
+clj꞉aoc2024.day3꞉> 
+; Syntax error reading source at (REPL:5:15).
+; Unsupported escape character: \(
+clj꞉aoc2024.day3꞉> 
+; Syntax error reading source at (REPL:5:16).
+; Unsupported escape character: \d
+clj꞉aoc2024.day3꞉> 
+("mul(2,4)" "mul(5,5)" "mul(11,8)" "mul(8,5)")
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/extract-muls
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/extract-muls
+clj꞉aoc2024.day3꞉> 
+("mul(2,4)" "mul(5,5)" "mul(11,8)" "mul(8,5)")
+clj꞉aoc2024.day3꞉> 
+nil
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/calculate-mul
+clj꞉aoc2024.day3꞉> 
+88
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-one
+clj꞉aoc2024.day3꞉> 
+161
+clj꞉aoc2024.day3꞉> 
+nil
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/input
+clj꞉aoc2024.day3꞉> 
+170068701
+clj꞉aoc2024.day3꞉> 
+170068701
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/example
+clj꞉aoc2024.day3꞉> 
+; Execution error (FileNotFoundException) at aoc2024.day3/eval10657$loading (form-init11802149751332764485.clj:1).
+; Could not locate clojure/str__init.class, clojure/str.clj or clojure/str.cljc on classpath.
+clj꞉aoc2024.day3꞉> 
+nil
+clj꞉aoc2024.day3꞉> 
+["xmul(2,4)&mul[3,7]!^" "_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"]
+clj꞉aoc2024.day3꞉> 
+; Execution error (ClassCastException) at aoc2024.day3/eval10673 (form-init11802149751332764485.clj:31).
+; class java.lang.String cannot be cast to class java.lang.Number (java.lang.String and java.lang.Number are in module java.base of loader 'bootstrap')
+clj꞉aoc2024.day3꞉> 
+"bdo()ldo()ado()h"
+clj꞉aoc2024.day3꞉> 
+"don't()do()"
+clj꞉aoc2024.day3꞉> 
+["do()xmul(2,4)&mul[3,7]!^" "_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"]
+clj꞉aoc2024.day3꞉> 
+"bbbo"
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+"keep_do()"
+clj꞉aoc2024.day3꞉> 
+""
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/remove-disabled-code
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+118265503
+clj꞉aoc2024.day3꞉> 
+118265503
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/example
+clj꞉aoc2024.day3꞉> 
+48
+clj꞉aoc2024.day3꞉> 
+118265503
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+; Syntax error reading source at (REPL:46:42).
+; Unknown inline modifier near index 3
+; (?do\(\)|don't\(\))
+;    ^
+clj꞉aoc2024.day3꞉> 
+["xmul(2,4)&mul[3,7]!^" "_mul(5,5)+mul(32,64](mul(11,8)un" "?mul(8,5))"]
+clj꞉aoc2024.day3꞉> 
+("don't()" "do()")
+clj꞉aoc2024.day3꞉> 
+("don't()" "do()")
+clj꞉aoc2024.day3꞉> 
+("don't()" "do(")
+clj꞉aoc2024.day3꞉> 
+("don't()" "do()")
+clj꞉aoc2024.day3꞉> 
+("don't()" "do()")
+clj꞉aoc2024.day3꞉> 
+("don't()" "do()")
+clj꞉aoc2024.day3꞉> 
+("don't()" "do()")
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+88560720
+clj꞉aoc2024.day3꞉> 
+88560720
+clj꞉aoc2024.day3꞉> 
+; Syntax error reading source at (REPL:25:52).
+; Unsupported escape character: \s
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+48
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/example
+clj꞉aoc2024.day3꞉> 
+136
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^(mul(11,8)undo()?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/x
+clj꞉aoc2024.day3꞉> 
+nil
+clj꞉aoc2024.day3꞉> 
+""
+clj꞉aoc2024.day3꞉> 
+""
+clj꞉aoc2024.day3꞉> 
+{:x "f", :input "", :on true}
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/update-x
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^|()_mul(5,5)+mul(32,64]do()(mul(11,8)undo()?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^|_mul(5,5)+mul(32,64]£(mul(11,8)un£?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/x
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/reducer
+clj꞉aoc2024.day3꞉> 
+{:input
+ [\x
+  \m
+  \u
+  \l
+  \(
+  \2
+  \,
+  \4
+  \)
+  \&
+  \m
+  \u
+  \l
+  \[
+  \3
+  \,
+  \7
+  \]
+  \!
+  \^
+  \d
+  \o
+  \n
+  \'
+  \t
+  \(
+  \)
+  \_
+  \m
+  \u
+  \l
+  \(
+  \5
+  \,
+  \5
+  \)
+  \+
+  \m
+  \u
+  \l
+  \(
+  \3
+  \2
+  \,
+  \6
+  \4
+  \]
+  \d
+  \o
+  \(
+  ...],
+ :on true}
+clj꞉aoc2024.day3꞉> 
+"{:input [\\x \\m \\u \\l \\( \\2 \\, \\4 \\) \\& \\m \\u \\l \\[ \\3 \\, \\7 \\] \\! \\^ \\d \\o \\n \\' \\t \\( \\) \\_ \\m \\u \\l \\( \\5 \\, \\5 \\) \\+ \\m \\u \\l \\( \\3 \\2 \\, \\6 \\4 \\] \\d \\o \\( \\) \\( \\m \\u \\l \\( \\1 \\1 \\, \\8 \\) \\u \\n \\d \\o \\( \\) \\? \\m \\u \\l \\( \\8 \\, \\5 \\) \\)], :on true}"
+clj꞉aoc2024.day3꞉> 
+{:input
+ [\x
+  \m
+  \u
+  \l
+  \(
+  \2
+  \,
+  \4
+  \)
+  \&
+  \m
+  \u
+  \l
+  \[
+  \3
+  \,
+  \7
+  \]
+  \!
+  \^
+  \|
+  \_
+  \m
+  \u
+  \l
+  \(
+  \5
+  \,
+  \5
+  \)
+  \+
+  \m
+  \u
+  \l
+  \(
+  \3
+  \2
+  \,
+  \6
+  \4
+  \]
+  \£
+  \(
+  \m
+  \u
+  \l
+  \(
+  \1
+  \1
+  \,
+  ...],
+ :on true}
+clj꞉aoc2024.day3꞉> 
+"{:input [\\x \\m \\u \\l \\( \\2 \\, \\4 \\) \\& \\m \\u \\l \\[ \\3 \\, \\7 \\] \\! \\^ \\| \\_ \\m \\u \\l \\( \\5 \\, \\5 \\) \\+ \\m \\u \\l \\( \\3 \\2 \\, \\6 \\4 \\] \\£ \\( \\m \\u \\l \\( \\1 \\1 \\, \\8 \\) \\u \\n \\£ \\? \\m \\u \\l \\( \\8 \\, \\5 \\) \\)], :on true}"
+clj꞉aoc2024.day3꞉> 
+"[\\x \\m \\u \\l \\( \\2 \\, \\4 \\) \\& \\m \\u \\l \\[ \\3 \\, \\7 \\] \\! \\^ \\| \\_ \\m \\u \\l \\( \\5 \\, \\5 \\) \\+ \\m \\u \\l \\( \\3 \\2 \\, \\6 \\4 \\] \\£ \\( \\m \\u \\l \\( \\1 \\1 \\, \\8 \\) \\u \\n \\£ \\? \\m \\u \\l \\( \\8 \\, \\5 \\) \\)]"
+clj꞉aoc2024.day3꞉> 
+; [\x \m \u \l \( \2 \, \4 \) \& \m \u \l \[ \3 \, \7 \] \! \^ \| \_ \m \u \l \( \5 \, \5 \) \+ \m \u \l \( \3 \2 \, \6 \4 \] \£ \( \m \u \l \( \1 \1 \, \8 \) \u \n \£ \? \m \u \l \( \8 \, \5 \) \)]
+nil
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^|_mul(5,5)+mul(32,64]£(mul(11,8)un£?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+; xmul(2,4)&mul[3,7]!^|_mul(5,5)+mul(32,64]£(mul(11,8)un£?mul(8,5))
+""
+clj꞉aoc2024.day3꞉> 
+nil
+clj꞉aoc2024.day3꞉> 
+; Syntax error compiling at (src/aoc2024/day3.clj:66:15).
+; No such namespace: pprint
+clj꞉aoc2024.day3꞉> 
+; Syntax error compiling at (src/aoc2024/day3.clj:66:15).
+; No such namespace: pp
+clj꞉aoc2024.day3꞉> 
+{:input "", :on true}
+clj꞉aoc2024.day3꞉> 
+; {:input "", :on true}
+nil
+clj꞉aoc2024.day3꞉> 
+; Syntax error compiling at (src/aoc2024/day3.clj:66:15).
+; No such namespace: pp
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/reducer
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^|_mul(5,5)+mul(32,64]£(mul(11,8)un£?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/reducer
+clj꞉aoc2024.day3꞉> 
+; {:input [\x \m \u \l \( \2 \, \4 \) \& \m \u \l \[ \3 \, \7 \] \! \^], :on true}
+"xmul(2,4)&mul[3,7]!^(mul(11,8)un?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/reducer
+clj꞉aoc2024.day3꞉> 
+"xmul(2,4)&mul[3,7]!^(mul(11,8)un?mul(8,5))"
+clj꞉aoc2024.day3꞉> 
+#function[clojure.core/map/fn--5931]
+clj꞉aoc2024.day3꞉> 
+(8 88 40)
+clj꞉aoc2024.day3꞉> 
+136
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/example
+clj꞉aoc2024.day3꞉> 
+48
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/remove-disabled-code
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+; Execution error (ClassCastException) at aoc2024.day3/extract-muls (form-init11802149751332764485.clj:9).
+; class clojure.lang.PersistentArrayMap cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentArrayMap is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+; Execution error (ClassCastException) at aoc2024.day3/extract-muls (form-init11802149751332764485.clj:9).
+; class clojure.lang.PersistentArrayMap cannot be cast to class java.lang.CharSequence (clojure.lang.PersistentArrayMap is in unnamed module of loader 'app'; java.lang.CharSequence is in module java.base of loader 'bootstrap')
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/remove-disabled-code
+clj꞉aoc2024.day3꞉> 
+0
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/remove-disabled-code
+clj꞉aoc2024.day3꞉> 
+0
+clj꞉aoc2024.day3꞉> 
+0
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/remove-disabled-code
+clj꞉aoc2024.day3꞉> 
+48
+clj꞉aoc2024.day3꞉> 
+78683433
+clj꞉aoc2024.day3꞉> 
+78683433
+clj꞉aoc2024.day3꞉> 
+; Evaluating file: day3.clj
+nil
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day3/part-two
+clj꞉aoc2024.day3꞉> 
+78683433
+clj꞉aoc2024.day3꞉> 
+#'aoc2024.day4/example
+clj꞉aoc2024.day4꞉> 
+; Syntax error compiling at (src/aoc2024/day4.clj:16:1).
+; No such namespace: str
+clj꞉aoc2024.day4꞉> 
+; Syntax error compiling at (src/aoc2024/day4.clj:15:1).
+; No such namespace: str
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+["MMMSXXMASM"
+ "MSAMXMSMSA"
+ "AMXSXMAAMM"
+ "MSAMASMSMX"
+ "XMASAMXAMM"
+ "XXAMMXXAMA"
+ "SMSMSASXSS"
+ "SAXAMASAAA"
+ "MAMMMXMMMM"
+ "MXMXAXMASX"]
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+["MMMSXXMASM"
+ "MSAMXMSMSA"
+ "AMXSXMAAMM"
+ "MSAMASMSMX"
+ "XMASAMXAMM"
+ "XXAMMXXAMA"
+ "SMSMSASXSS"
+ "SAXAMASAAA"
+ "MAMMMXMMMM"
+ "MXMXAXMASX"]
+clj꞉aoc2024.day4꞉> 
+"XMASAMXAMM"
+clj꞉aoc2024.day4꞉> 
+\M
+clj꞉aoc2024.day4꞉> 
+; Execution error (NullPointerException) at aoc2024.day4/eval10995 (form-init11802149751332764485.clj:26).
+; Cannot invoke "Object.getClass()" because "x" is null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/row
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/check-left (form-init11802149751332764485.clj:25).
+; class java.lang.String cannot be cast to class clojure.lang.IPersistentVector (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IPersistentVector is in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+["test"]
+clj꞉aoc2024.day4꞉> 
+(\t \e \s \t)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+((\M \M \M \S \X \X \M \A \S \M)
+ (\M \S \A \M \X \M \S \M \S \A)
+ (\A \M \X \S \X \M \A \A \M \M)
+ (\M \S \A \M \A \S \M \S \M \X)
+ (\X \M \A \S \A \M \X \A \M \M)
+ (\X \X \A \M \M \X \X \A \M \A)
+ (\S \M \S \M \S \A \S \X \S \S)
+ (\S \A \X \A \M \A \S \A \A \A)
+ (\M \A \M \M \M \X \M \M \M \M)
+ (\M \X \M \X \A \X \M \A \S \X))
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/check-left (form-init11802149751332764485.clj:25).
+; class clojure.lang.StringSeq cannot be cast to class clojure.lang.IPersistentVector (clojure.lang.StringSeq and clojure.lang.IPersistentVector are in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+[(\t \e \s \t)]
+clj꞉aoc2024.day4꞉> 
+[\t \e \s \t]
+clj꞉aoc2024.day4꞉> 
+[\t \e \s \t]
+clj꞉aoc2024.day4꞉> 
+; Execution error (ArityException) at nrepl.middleware.interruptible-eval/evaluate$fn$fn (interruptible_eval.clj:87).
+; Wrong number of args (1) passed to: clojure.core/apply
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/check-left (form-init11802149751332764485.clj:25).
+; null
+clj꞉aoc2024.day4꞉> 
+([\M \M \M \S \X \X \M \A \S \M]
+ [\M \S \A \M \X \M \S \M \S \A]
+ [\A \M \X \S \X \M \A \A \M \M]
+ [\M \S \A \M \A \S \M \S \M \X]
+ [\X \M \A \S \A \M \X \A \M \M]
+ [\X \X \A \M \M \X \X \A \M \A]
+ [\S \M \S \M \S \A \S \X \S \S]
+ [\S \A \X \A \M \A \S \A \A \A]
+ [\M \A \M \M \M \X \M \M \M \M]
+ [\M \X \M \X \A \X \M \A \S \X])
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/check-left (form-init11802149751332764485.clj:25).
+; null
+clj꞉aoc2024.day4꞉> 
+[\M \M \M \S \X \X \M \A \S \M]
+clj꞉aoc2024.day4꞉> 
+([\M \M \M \S \X \X \M \A \S \M]
+ [\M \S \A \M \X \M \S \M \S \A]
+ [\A \M \X \S \X \M \A \A \M \M]
+ [\M \S \A \M \A \S \M \S \M \X]
+ [\X \M \A \S \A \M \X \A \M \M]
+ [\X \X \A \M \M \X \X \A \M \A]
+ [\S \M \S \M \S \A \S \X \S \S]
+ [\S \A \X \A \M \A \S \A \A \A]
+ [\M \A \M \M \M \X \M \M \M \M]
+ [\M \X \M \X \A \X \M \A \S \X])
+clj꞉aoc2024.day4꞉> 
+([\t \e \s \t] [\p \o \n \g] [\b \u \l \k])
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/lines
+clj꞉aoc2024.day4꞉> 
+["MMMSXXMASM"
+ "MSAMXMSMSA"
+ "AMXSXMAAMM"
+ "MSAMASMSMX"
+ "XMASAMXAMM"
+ "XXAMMXXAMA"
+ "SMSMSASXSS"
+ "SAXAMASAAA"
+ "MAMMMXMMMM"
+ "MXMXAXMASX"]
+clj꞉aoc2024.day4꞉> 
+([\t \e \s \t] [\p \o \n \g] [\b \u \l \k])
+clj꞉aoc2024.day4꞉> 
+["MMMSXXMASM"
+ "MSAMXMSMSA"
+ "AMXSXMAAMM"
+ "MSAMASMSMX"
+ "XMASAMXAMM"
+ "XXAMMXXAMA"
+ "SMSMSASXSS"
+ "SAXAMASAAA"
+ "MAMMMXMMMM"
+ "MXMXAXMASX"]
+clj꞉aoc2024.day4꞉> 
+([\M \M \M \S \X \X \M \A \S \M]
+ [\M \S \A \M \X \M \S \M \S \A]
+ [\A \M \X \S \X \M \A \A \M \M]
+ [\M \S \A \M \A \S \M \S \M \X]
+ [\X \M \A \S \A \M \X \A \M \M]
+ [\X \X \A \M \M \X \X \A \M \A]
+ [\S \M \S \M \S \A \S \X \S \S]
+ [\S \A \X \A \M \A \S \A \A \A]
+ [\M \A \M \M \M \X \M \M \M \M]
+ [\M \X \M \X \A \X \M \A \S \X])
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; [\M \M \M \S \X \X \M \A \S \M]
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/check-left (form-init11802149751332764485.clj:26).
+; null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; [\M \M \M \S \X \X \M \A \S \M]
+[\M \S \X]
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-position
+clj꞉aoc2024.day4꞉> 
+; [\M \M \M \S \X \X \M \A \S \M]
+[\M \M \S \X]
+clj꞉aoc2024.day4꞉> 
+; [\M \S \A \M \X \M \S \M \S \A]
+[\S \A \M \X]
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; [\M \S \A \M \X \M \S \M \S \A]
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; Syntax error compiling if at (src/aoc2024/day4.clj:24:3).
+; Too many arguments to if
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; [\M \S \A \M \X \M \S \M \S \A]
+nil
+clj꞉aoc2024.day4꞉> 
+false
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+false
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; [\M \S \A \M \X \M \S \M \S \A]
+; [\S \A \M \X]
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/directions
+clj꞉aoc2024.day4꞉> 
+{:right {:x 1, :y 0}, :left {:x -1, :y 0}, :up {:x 0, :y -1}, :down {:x 0, :y 1}}
+clj꞉aoc2024.day4꞉> 
+{:x 0, :y 0}
+clj꞉aoc2024.day4꞉> 
+{:x 1, :y -1}
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/get-at
+clj꞉aoc2024.day4꞉> 
+\M
+clj꞉aoc2024.day4꞉> 
+\M
+clj꞉aoc2024.day4꞉> 
+[\M \S \A \M \X \M \S \M \S \A]
+clj꞉aoc2024.day4꞉> 
+\S
+clj꞉aoc2024.day4꞉> 
+\M
+clj꞉aoc2024.day4꞉> 
+[\A \M \X \S \X \M \A \A \M \M]
+clj꞉aoc2024.day4꞉> 
+\A
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/x
+clj꞉aoc2024.day4꞉> 
+(3 3 3 3)
+clj꞉aoc2024.day4꞉> 
+(0 1 2 3)
+clj꞉aoc2024.day4꞉> 
+(1 2 3)
+clj꞉aoc2024.day4꞉> 
+(1 2 3 4)
+clj꞉aoc2024.day4꞉> 
+(1 2 3 4)
+clj꞉aoc2024.day4꞉> 
+(-1 -2 -3 -4)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/row
+clj꞉aoc2024.day4꞉> 
+[\M \M \M \S \X \X \M \A \S \M]
+clj꞉aoc2024.day4꞉> 
+10
+clj꞉aoc2024.day4꞉> 
+false
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+false
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+\M
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/eval11144 (form-init11802149751332764485.clj:32).
+; class java.lang.Long cannot be cast to class clojure.lang.IPersistentVector (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IPersistentVector is in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+[\M]
+clj꞉aoc2024.day4꞉> 
+[\M]
+clj꞉aoc2024.day4꞉> 
+[\X \M \A \S]
+clj꞉aoc2024.day4꞉> 
+[\X \M \A \S]
+clj꞉aoc2024.day4꞉> 
+[\X \M \A \S]
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 5}
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 5}
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 5}
+; "in"
+true
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 6}
+; "in"
+false
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 7}
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/xmas
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/smax
+clj꞉aoc2024.day4꞉> 
+[\X \M \A \S]
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/samx
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/check-down (form-init11802149751332764485.clj:43).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/check-down (form-init11802149751332764485.clj:43).
+; class java.lang.Long cannot be cast to class clojure.lang.IFn (java.lang.Long is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+3
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+false
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-right
+clj꞉aoc2024.day4꞉> 
+false
+clj꞉aoc2024.day4꞉> 
+[\X \S \X \M]
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+; Execution error (ArityException) at aoc2024.day4/eval11204 (form-init11802149751332764485.clj:81).
+; Wrong number of args (2) passed to: aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-left
+clj꞉aoc2024.day4꞉> 
+([0 0] [1 1] [2 2] [3 3] [4 4] [5 5] [6 6] [7 7] [8 8] [9 9])
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/coords
+clj꞉aoc2024.day4꞉> 
+([0 0]
+ [0 1]
+ [0 2]
+ [0 3]
+ [0 4]
+ [0 5]
+ [0 6]
+ [0 7]
+ [0 8]
+ [0 9]
+ [1 0]
+ [1 1]
+ [1 2]
+ [1 3]
+ [1 4]
+ [1 5]
+ [1 6]
+ [1 7]
+ [1 8]
+ [1 9]
+ [2 0]
+ [2 1]
+ [2 2]
+ [2 3]
+ [2 4]
+ [2 5]
+ [2 6]
+ [2 7]
+ [2 8]
+ [2 9]
+ [3 0]
+ [3 1]
+ [3 2]
+ [3 3]
+ [3 4]
+ [3 5]
+ [3 6]
+ [3 7]
+ [3 8]
+ [3 9]
+ [4 0]
+ [4 1]
+ [4 2]
+ [4 3]
+ [4 4]
+ [4 5]
+ [4 6]
+ [4 7]
+ [4 8]
+ [4 9]
+ ...)
+clj꞉aoc2024.day4꞉> 
+; Execution error (UnsupportedOperationException) at aoc2024.day4/fn (form-init11802149751332764485.clj:22).
+; count not supported on this type: Character
+clj꞉aoc2024.day4꞉> 
+\M
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/coords
+clj꞉aoc2024.day4꞉> 
+([0 0]
+ [0 1]
+ [0 2]
+ [0 3]
+ [0 4]
+ [0 5]
+ [0 6]
+ [0 7]
+ [0 8]
+ [0 9]
+ [1 0]
+ [1 1]
+ [1 2]
+ [1 3]
+ [1 4]
+ [1 5]
+ [1 6]
+ [1 7]
+ [1 8]
+ [1 9]
+ [2 0]
+ [2 1]
+ [2 2]
+ [2 3]
+ [2 4]
+ [2 5]
+ [2 6]
+ [2 7]
+ [2 8]
+ [2 9]
+ [3 0]
+ [3 1]
+ [3 2]
+ [3 3]
+ [3 4]
+ [3 5]
+ [3 6]
+ [3 7]
+ [3 8]
+ [3 9]
+ [4 0]
+ [4 1]
+ [4 2]
+ [4 3]
+ [4 4]
+ [4 5]
+ [4 6]
+ [4 7]
+ [4 8]
+ [4 9]
+ ...)
+clj꞉aoc2024.day4꞉> 
+#function[clojure.core/map/fn--5931]
+clj꞉aoc2024.day4꞉> 
+(\M
+ \M
+ \A
+ \M
+ \X
+ \X
+ \S
+ \S
+ \M
+ \M
+ \M
+ \S
+ \M
+ \S
+ \M
+ \X
+ \M
+ \A
+ \A
+ \X
+ \M
+ \A
+ \X
+ \A
+ \A
+ \A
+ \S
+ \X
+ \M
+ \M
+ \S
+ \M
+ \S
+ \M
+ \S
+ \M
+ \M
+ \A
+ \M
+ \X
+ \X
+ \X
+ \X
+ \A
+ \A
+ \M
+ \S
+ \M
+ \M
+ \A
+ ...)
+clj꞉aoc2024.day4꞉> 
+(0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 0 0 0 0 0 0 0 ...)
+clj꞉aoc2024.day4꞉> 
+19
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 0}
+; "in"
+; {:row-length 10, :x 0}
+; "in"
+; Execution error (ClassCastException) at aoc2024.day4/eval11322 (form-init11802149751332764485.clj:104).
+; class clojure.lang.LazySeq cannot be cast to class java.lang.Number (clojure.lang.LazySeq is in unnamed module of loader 'app'; java.lang.Number is in module java.base of loader 'bootstrap')
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 0}
+; "in"
+; {:row-length 10, :x 0}
+; "in"
+; {:row-length 10, :x 1}
+; "in"
+; {:row-length 10, :x 1}
+; "in"
+; {:row-length 10, :x 2}
+; "in"
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:50).
+; null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/coords
+clj꞉aoc2024.day4꞉> 
+; {:row-length 10, :x 0}
+; "in"
+; {:row-length 10, :x 0}
+; "in"
+; {:row-length 10, :x 1}
+; "in"
+; {:row-length 10, :x 2}
+; "in"
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:50).
+; null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/get-at
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:row-length 10, :x 0}
+; "in"
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:row-length 10, :x 0}
+; "in"
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:row-length 10, :x 1}
+; "in"
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:row-length 10, :x 2}
+; "in"
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y -1, :calling "get-at"}
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:28).
+; null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-left
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y -1, :calling "get-at"}
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:28).
+; null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-left
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cdl, :x 2, :y 2}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:f :cl, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cu, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:f :cd, :x 2, :y 7}
+; {:f :cur, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:f :cul, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cdl, :x 2, :y 7}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 3, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 3, :y 4, :calling "get-at"}
+; {:x 3, :y 5, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:f :cl, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:f :cu, :x 4, :y 0}
+; {:f :cd, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cur, :x 4, :y 0}
+; {:f :cul, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cdl, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:f :cl, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:f :cu, :x 4, :y 1}
+; {:f :cd, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:f :cur, :x 4, :y 1}
+; {:f :cul, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:f :cdl, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cl, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:f :cu, :x 4, :y 2}
+; {:f :cd, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:f :cur, :x 4, :y 2}
+; {:f :cul, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:f :cdl, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:x 5, :y 0, :calling "get-at"}
+; {:f :cl, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:f :cu, :x 5, :y 0}
+; {:f :cd, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:f :cur, :x 5, :y 0}
+; {:f :cul, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:f :cdl, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cl, :x 5, :y 5}
+; {:f :cdr, :x 5, :y 5}
+; {:f :cu, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:f :cd, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cur, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:f :cul, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cdr, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+; {:f :cdl, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cl, :x 5, :y 8}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cu, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cd, :x 5, :y 8}
+; {:f :cur, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:f :cul, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cdl, :x 5, :y 8}
+; {:x 6, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:f :cl, :x 6, :y 4}
+; {:f :cdr, :x 6, :y 4}
+; {:f :cu, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:f :cd, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:f :cur, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 9, :y 1, :calling "get-at"}
+; {:f :cul, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cdr, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 9, :y 7, :calling "get-at"}
+; {:f :cdl, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:f :cl, :x 6, :y 5}
+; {:f :cdr, :x 6, :y 5}
+; {:f :cu, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:f :cd, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:f :cur, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 9, :y 2, :calling "get-at"}
+; {:f :cul, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cdr, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 9, :y 8, :calling "get-at"}
+; {:f :cdl, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:x 7, :y 0, :calling "get-at"}
+; {:x 7, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:f :cl, :x 7, :y 6}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cu, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cd, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 7, :y 9, :calling "get-at"}
+; {:f :cur, :x 7, :y 6}
+; {:f :cul, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cdl, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 9, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 8, :y 0, :calling "get-at"}
+; {:x 8, :y 1, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 8, :y 4, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+6
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-left
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cdl, :x 2, :y 2}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:f :cl, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cu, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:f :cd, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 2, :y 9, :calling "get-at"}
+; {:x 2, :y 10, :calling "get-at"}
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:28).
+; null
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cdl, :x 2, :y 2}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:f :cl, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cu, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:f :cd, :x 2, :y 7}
+; {:f :cur, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:f :cul, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cdl, :x 2, :y 7}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 3, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 3, :y 4, :calling "get-at"}
+; {:x 3, :y 5, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:f :cl, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:f :cu, :x 4, :y 0}
+; {:f :cd, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cur, :x 4, :y 0}
+; {:f :cul, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cdl, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:f :cl, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:f :cu, :x 4, :y 1}
+; {:f :cd, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:f :cur, :x 4, :y 1}
+; {:f :cul, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:f :cdl, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cl, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:f :cu, :x 4, :y 2}
+; {:f :cd, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:f :cur, :x 4, :y 2}
+; {:f :cul, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:f :cdl, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:x 5, :y 0, :calling "get-at"}
+; {:f :cl, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:f :cu, :x 5, :y 0}
+; {:f :cd, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:f :cur, :x 5, :y 0}
+; {:f :cul, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:f :cdl, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cl, :x 5, :y 5}
+; {:f :cdr, :x 5, :y 5}
+; {:f :cu, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:f :cd, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cur, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:f :cul, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cdr, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+; {:f :cdl, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cl, :x 5, :y 8}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cu, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cd, :x 5, :y 8}
+; {:f :cur, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:f :cul, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cdl, :x 5, :y 8}
+; {:x 6, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:f :cl, :x 6, :y 4}
+; {:f :cdr, :x 6, :y 4}
+; {:f :cu, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:f :cd, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:f :cur, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 9, :y 1, :calling "get-at"}
+; {:f :cul, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cdr, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 9, :y 7, :calling "get-at"}
+; {:f :cdl, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:f :cl, :x 6, :y 5}
+; {:f :cdr, :x 6, :y 5}
+; {:f :cu, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:f :cd, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:f :cur, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 9, :y 2, :calling "get-at"}
+; {:f :cul, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cdr, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 9, :y 8, :calling "get-at"}
+; {:f :cdl, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:x 7, :y 0, :calling "get-at"}
+; {:x 7, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:f :cl, :x 7, :y 6}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cu, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cd, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 7, :y 9, :calling "get-at"}
+; {:f :cur, :x 7, :y 6}
+; {:f :cul, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cdl, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 9, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 8, :y 0, :calling "get-at"}
+; {:x 8, :y 1, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 8, :y 4, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+6
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cdl, :x 2, :y 2}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:f :cl, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cu, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:f :cd, :x 2, :y 7}
+; {:f :cur, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:f :cul, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cdl, :x 2, :y 7}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 3, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 3, :y 4, :calling "get-at"}
+; {:x 3, :y 5, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:f :cl, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:f :cu, :x 4, :y 0}
+; {:f :cd, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cur, :x 4, :y 0}
+; {:f :cul, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cdl, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:f :cl, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:f :cu, :x 4, :y 1}
+; {:f :cd, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:f :cur, :x 4, :y 1}
+; {:f :cul, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:f :cdl, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cl, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:f :cu, :x 4, :y 2}
+; {:f :cd, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:f :cur, :x 4, :y 2}
+; {:f :cul, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:f :cdl, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:x 5, :y 0, :calling "get-at"}
+; {:f :cl, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:f :cu, :x 5, :y 0}
+; {:f :cd, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:f :cur, :x 5, :y 0}
+; {:f :cul, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:f :cdl, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cl, :x 5, :y 5}
+; {:f :cdr, :x 5, :y 5}
+; {:f :cu, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:f :cd, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cur, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:f :cul, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cdr, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+; {:f :cdl, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cl, :x 5, :y 8}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cu, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cd, :x 5, :y 8}
+; {:f :cur, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:f :cul, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cdl, :x 5, :y 8}
+; {:x 6, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:f :cl, :x 6, :y 4}
+; {:f :cdr, :x 6, :y 4}
+; {:f :cu, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:f :cd, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:f :cur, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 9, :y 1, :calling "get-at"}
+; {:f :cul, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cdr, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 9, :y 7, :calling "get-at"}
+; {:f :cdl, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:f :cl, :x 6, :y 5}
+; {:f :cdr, :x 6, :y 5}
+; {:f :cu, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:f :cd, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:f :cur, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 9, :y 2, :calling "get-at"}
+; {:f :cul, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cdr, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 9, :y 8, :calling "get-at"}
+; {:f :cdl, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:x 7, :y 0, :calling "get-at"}
+; {:x 7, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:f :cl, :x 7, :y 6}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cu, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cd, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 7, :y 9, :calling "get-at"}
+; {:f :cur, :x 7, :y 6}
+; {:f :cul, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cdl, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 9, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 8, :y 0, :calling "get-at"}
+; {:x 8, :y 1, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 8, :y 4, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+6
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; [nil true false false false nil false nil]
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; [nil false false false true nil false nil]
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; [nil false false false false nil false nil]
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cdl, :x 2, :y 2}
+; [nil false nil false nil nil false nil]
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:f :cl, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cu, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:f :cd, :x 2, :y 7}
+; {:f :cur, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:f :cul, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cdl, :x 2, :y 7}
+; [nil false false nil false nil nil nil]
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 3, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 3, :y 4, :calling "get-at"}
+; {:x 3, :y 5, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:f :cl, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:f :cu, :x 4, :y 0}
+; {:f :cd, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cur, :x 4, :y 0}
+; {:f :cul, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cdl, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; [false false nil false nil nil true false]
+; {:x 4, :y 1, :calling "get-at"}
+; {:f :cl, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:f :cu, :x 4, :y 1}
+; {:f :cd, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:f :cur, :x 4, :y 1}
+; {:f :cul, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:f :cdl, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; [false false nil false nil nil false false]
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cl, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:f :cu, :x 4, :y 2}
+; {:f :cd, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:f :cur, :x 4, :y 2}
+; {:f :cul, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:f :cdl, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; [false false nil false nil nil false false]
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:x 5, :y 0, :calling "get-at"}
+; {:f :cl, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:f :cu, :x 5, :y 0}
+; {:f :cd, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:f :cur, :x 5, :y 0}
+; {:f :cul, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:f :cdl, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; [false true nil false nil nil false false]
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cl, :x 5, :y 5}
+; {:f :cdr, :x 5, :y 5}
+; {:f :cu, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:f :cd, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cur, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:f :cul, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cdr, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+; {:f :cdl, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 2, :y 8, :calling "get-at"}
+; [false false false false false false false false]
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cl, :x 5, :y 8}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cu, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cd, :x 5, :y 8}
+; {:f :cur, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:f :cul, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cdl, :x 5, :y 8}
+; [false false false nil false false nil nil]
+; {:x 6, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:f :cl, :x 6, :y 4}
+; {:f :cdr, :x 6, :y 4}
+; {:f :cu, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:f :cd, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:f :cur, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 9, :y 1, :calling "get-at"}
+; {:f :cul, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cdr, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 9, :y 7, :calling "get-at"}
+; {:f :cdl, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; [false false true false false false false false]
+; {:x 6, :y 5, :calling "get-at"}
+; {:f :cl, :x 6, :y 5}
+; {:f :cdr, :x 6, :y 5}
+; {:f :cu, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:f :cd, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:f :cur, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 9, :y 2, :calling "get-at"}
+; {:f :cul, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cdr, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 9, :y 8, :calling "get-at"}
+; {:f :cdl, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; [false false false false false true false false]
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:x 7, :y 0, :calling "get-at"}
+; {:x 7, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:f :cl, :x 7, :y 6}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cu, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cd, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 7, :y 9, :calling "get-at"}
+; {:f :cur, :x 7, :y 6}
+; {:f :cul, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cdl, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 9, :calling "get-at"}
+; [false nil false false nil false nil false]
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 8, :y 0, :calling "get-at"}
+; {:x 8, :y 1, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 8, :y 4, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+6
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-grid
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at nrepl.middleware.interruptible-eval/evaluate$fn$fn (interruptible_eval.clj:87).
+; class java.lang.String cannot be cast to class clojure.lang.IFn (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-grid
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-puzzle
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-grid
+clj꞉aoc2024.day4꞉> 
+([\X \M \A \S \M \S \A \M \X]
+ [\space \space \space \M \M \A \S \X \S \A \M \M]
+ [\space \space \space \A \A \A \S \M \S \A \A \A]
+ [\space \space \space \S \S \S \S \A \S \S \S \S]
+ [\space \space \space \A \A \A \S \M \S \A \A \A]
+ [\space \space \space \M \M \A \S \X \S \A \M \M]
+ [\space \space \space \X \M \A \S \M \S \A \M \X])
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-puzzle
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-grid
+clj꞉aoc2024.day4꞉> 
+([\X \M \A \S \M \S \A \M \X]
+ [\M \M \A \S \X \S \A \M \M]
+ [\A \A \A \S \M \S \A \A \A]
+ [\S \S \S \S \A \S \S \S \S]
+ [\A \A \A \S \M \S \A \A \A]
+ [\M \M \A \S \X \S \A \M \M]
+ [\X \M \A \S \M \S \A \M \X])
+clj꞉aoc2024.day4꞉> 
+; {:f :cdr, :x 0, :y 0}
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cd, :x 0, :y 0}
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cdl, :x 0, :y 0}
+nil
+clj꞉aoc2024.day4꞉> 
+; {:f :cdl, :x 8, :y 0}
+; {:x 8, :y 0, :calling "get-at"}
+; {:x 7, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cur, :x 8, :y 8}
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-right
+clj꞉aoc2024.day4꞉> 
+; {:f :cur, :x 0, :y 8}
+; {:y-check true, :x-check true}
+; {:x 0, :y 8, :calling "get-at"}
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:28).
+; null
+clj꞉aoc2024.day4꞉> 
+; {:f :cur, :x 0, :y 7}
+; {:y-check true, :x-check true}
+; {:x 0, :y 7, :calling "get-at"}
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:28).
+; null
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 7, :calling "get-at"}
+; Execution error (IndexOutOfBoundsException) at aoc2024.day4/get-at (form-init11802149751332764485.clj:28).
+; null
+clj꞉aoc2024.day4꞉> 
+; {:x 7, :y 0, :calling "get-at"}
+\M
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 6, :calling "get-at"}
+\X
+clj꞉aoc2024.day4꞉> 
+[\X \M \A \S \M \S \A \M \X]
+clj꞉aoc2024.day4꞉> 
+[\X \M \A \S \M \S \A \M \X]
+clj꞉aoc2024.day4꞉> 
+; {:f :cur, :x 0, :y 6}
+; {:y-check true, :x-check true}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cul, :x 8, :y 6}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cu, :x 0, :y 6}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cdr, :x 0, :y 6}
+true
+clj꞉aoc2024.day4꞉> 
+; {:f :cl, :x 8, :y 6}
+false
+clj꞉aoc2024.day4꞉> 
+; {:f :cl, :x 8, :y 0}
+false
+clj꞉aoc2024.day4꞉> 
+; Syntax error compiling if at (src/aoc2024/day4.clj:32:3).
+; Too many arguments to if
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; {:f :cl, :x 8, :y 0}
+; [\M \S \A \M]
+false
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; {:f :cl, :x 8, :y 0}
+; [\S \A \M \X]
+false
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+; {:f :cl, :x 8, :y 0}
+true
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+; {:x 0, :y 0, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:f :cl, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:f :cu, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:x 0, :y 1, :calling "get-at"}
+; {:f :cd, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:f :cur, :x 0, :y 4}
+; {:y-check true, :x-check true}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cul, :x 0, :y 4}
+; {:f :cdr, :x 0, :y 4}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:f :cdl, :x 0, :y 4}
+; [nil true false false false nil false nil]
+; {:x 0, :y 5, :calling "get-at"}
+; {:f :cl, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:f :cu, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 4, :calling "get-at"}
+; {:x 0, :y 3, :calling "get-at"}
+; {:x 0, :y 2, :calling "get-at"}
+; {:f :cd, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:f :cur, :x 0, :y 5}
+; {:y-check true, :x-check true}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cul, :x 0, :y 5}
+; {:f :cdr, :x 0, :y 5}
+; {:x 0, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:f :cdl, :x 0, :y 5}
+; [nil false false false true nil false nil]
+; {:x 0, :y 6, :calling "get-at"}
+; {:x 0, :y 7, :calling "get-at"}
+; {:x 0, :y 8, :calling "get-at"}
+; {:x 1, :y 0, :calling "get-at"}
+; {:x 1, :y 1, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; {:f :cl, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:f :cu, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; {:x 1, :y 2, :calling "get-at"}
+; {:f :cd, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:f :cur, :x 1, :y 5}
+; {:y-check true, :x-check true}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cul, :x 1, :y 5}
+; {:f :cdr, :x 1, :y 5}
+; {:x 1, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:f :cdl, :x 1, :y 5}
+; [nil false false false false nil false nil]
+; {:x 1, :y 6, :calling "get-at"}
+; {:x 1, :y 7, :calling "get-at"}
+; {:x 1, :y 8, :calling "get-at"}
+; {:x 2, :y 0, :calling "get-at"}
+; {:x 2, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cl, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:f :cu, :x 2, :y 2}
+; {:f :cd, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cur, :x 2, :y 2}
+; {:y-check false, :x-check true}
+; {:f :cul, :x 2, :y 2}
+; {:f :cdr, :x 2, :y 2}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cdl, :x 2, :y 2}
+; [nil false nil false nil nil false nil]
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 7, :calling "get-at"}
+; {:f :cl, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cu, :x 2, :y 7}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 2, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:f :cd, :x 2, :y 7}
+; {:f :cur, :x 2, :y 7}
+; {:y-check true, :x-check true}
+; {:x 2, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:f :cul, :x 2, :y 7}
+; {:f :cdr, :x 2, :y 7}
+; {:f :cdl, :x 2, :y 7}
+; [nil false false nil false nil nil nil]
+; {:x 2, :y 8, :calling "get-at"}
+; {:x 3, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 3, :y 4, :calling "get-at"}
+; {:x 3, :y 5, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; {:x 4, :y 0, :calling "get-at"}
+; {:f :cl, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:f :cu, :x 4, :y 0}
+; {:f :cd, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cur, :x 4, :y 0}
+; {:y-check false, :x-check true}
+; {:f :cul, :x 4, :y 0}
+; {:f :cdr, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cdl, :x 4, :y 0}
+; {:x 4, :y 0, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:x 1, :y 3, :calling "get-at"}
+; [false false nil false nil nil true false]
+; {:x 4, :y 1, :calling "get-at"}
+; {:f :cl, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:f :cu, :x 4, :y 1}
+; {:f :cd, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:f :cur, :x 4, :y 1}
+; {:y-check false, :x-check true}
+; {:f :cul, :x 4, :y 1}
+; {:f :cdr, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:f :cdl, :x 4, :y 1}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; {:x 1, :y 4, :calling "get-at"}
+; [true false nil false nil nil false false]
+; {:x 4, :y 2, :calling "get-at"}
+; {:f :cl, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:f :cu, :x 4, :y 2}
+; {:f :cd, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:f :cur, :x 4, :y 2}
+; {:y-check false, :x-check true}
+; {:f :cul, :x 4, :y 2}
+; {:f :cdr, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:f :cdl, :x 4, :y 2}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 4, :calling "get-at"}
+; {:x 1, :y 5, :calling "get-at"}
+; [false false nil false nil nil false false]
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 4, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 4, :y 8, :calling "get-at"}
+; {:x 5, :y 0, :calling "get-at"}
+; {:f :cl, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:f :cu, :x 5, :y 0}
+; {:f :cd, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:f :cur, :x 5, :y 0}
+; {:y-check false, :x-check true}
+; {:f :cul, :x 5, :y 0}
+; {:f :cdr, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:f :cdl, :x 5, :y 0}
+; {:x 5, :y 0, :calling "get-at"}
+; {:x 4, :y 1, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:x 2, :y 3, :calling "get-at"}
+; [false true nil false nil nil false false]
+; {:x 5, :y 1, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cl, :x 5, :y 5}
+; {:f :cdr, :x 5, :y 5}
+; {:f :cu, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 5, :y 2, :calling "get-at"}
+; {:f :cd, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cur, :x 5, :y 5}
+; {:y-check true, :x-check true}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:f :cul, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 4, :calling "get-at"}
+; {:x 3, :y 3, :calling "get-at"}
+; {:x 2, :y 2, :calling "get-at"}
+; {:f :cdr, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+; {:f :cdl, :x 5, :y 5}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; {:x 2, :y 8, :calling "get-at"}
+; [false false false false false false false false]
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:f :cl, :x 5, :y 8}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cu, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 5, :y 7, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:f :cd, :x 5, :y 8}
+; {:f :cur, :x 5, :y 8}
+; {:y-check true, :x-check true}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:f :cul, :x 5, :y 8}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 6, :calling "get-at"}
+; {:x 2, :y 5, :calling "get-at"}
+; {:f :cdr, :x 5, :y 8}
+; {:f :cdl, :x 5, :y 8}
+; [false false false nil false false nil nil]
+; {:x 6, :y 0, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:f :cl, :x 6, :y 4}
+; {:f :cdr, :x 6, :y 4}
+; {:f :cu, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:x 6, :y 1, :calling "get-at"}
+; {:f :cd, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:f :cur, :x 6, :y 4}
+; {:y-check true, :x-check true}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 9, :y 1, :calling "get-at"}
+; {:f :cul, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 3, :calling "get-at"}
+; {:x 4, :y 2, :calling "get-at"}
+; {:x 3, :y 1, :calling "get-at"}
+; {:f :cdr, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 9, :y 7, :calling "get-at"}
+; {:f :cdl, :x 6, :y 4}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 5, :y 5, :calling "get-at"}
+; {:x 4, :y 6, :calling "get-at"}
+; {:x 3, :y 7, :calling "get-at"}
+; [true false true false false false false false]
+; {:x 6, :y 5, :calling "get-at"}
+; {:f :cl, :x 6, :y 5}
+; {:f :cdr, :x 6, :y 5}
+; {:f :cu, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 4, :calling "get-at"}
+; {:x 6, :y 3, :calling "get-at"}
+; {:x 6, :y 2, :calling "get-at"}
+; {:f :cd, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:f :cur, :x 6, :y 5}
+; {:y-check true, :x-check true}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 9, :y 2, :calling "get-at"}
+; {:f :cul, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:x 3, :y 2, :calling "get-at"}
+; {:f :cdr, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 9, :y 8, :calling "get-at"}
+; {:f :cdl, :x 6, :y 5}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 6, :calling "get-at"}
+; {:x 4, :y 7, :calling "get-at"}
+; {:x 3, :y 8, :calling "get-at"}
+; [false false false false false true false false]
+; {:x 6, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 6, :y 8, :calling "get-at"}
+; {:x 7, :y 0, :calling "get-at"}
+; {:x 7, :y 1, :calling "get-at"}
+; {:x 7, :y 2, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 6, :calling "get-at"}
+; {:f :cl, :x 7, :y 6}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cu, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 5, :calling "get-at"}
+; {:x 7, :y 4, :calling "get-at"}
+; {:x 7, :y 3, :calling "get-at"}
+; {:f :cd, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 7, :y 9, :calling "get-at"}
+; {:f :cur, :x 7, :y 6}
+; {:y-check true, :x-check false}
+; {:f :cul, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 5, :calling "get-at"}
+; {:x 5, :y 4, :calling "get-at"}
+; {:x 4, :y 3, :calling "get-at"}
+; {:f :cdr, :x 7, :y 6}
+; {:f :cdl, :x 7, :y 6}
+; {:x 7, :y 6, :calling "get-at"}
+; {:x 6, :y 7, :calling "get-at"}
+; {:x 5, :y 8, :calling "get-at"}
+; {:x 4, :y 9, :calling "get-at"}
+; [false nil false false nil false nil false]
+; {:x 7, :y 7, :calling "get-at"}
+; {:x 7, :y 8, :calling "get-at"}
+; {:x 8, :y 0, :calling "get-at"}
+; {:x 8, :y 1, :calling "get-at"}
+; {:x 8, :y 2, :calling "get-at"}
+; {:x 8, :y 3, :calling "get-at"}
+; {:x 8, :y 4, :calling "get-at"}
+; {:x 8, :y 5, :calling "get-at"}
+; {:x 8, :y 6, :calling "get-at"}
+; {:x 8, :y 7, :calling "get-at"}
+; {:x 8, :y 8, :calling "get-at"}
+8
+clj꞉aoc2024.day4꞉> 
+{:x 0, :y 0, :calling "get-at"}
+{:x 0, :y 1, :calling "get-at"}
+{:x 0, :y 2, :calling "get-at"}
+{:x 0, :y 3, :calling "get-at"}
+{:x 0, :y 4, :calling "get-at"}
+{:f :cl, :x 0, :y 4}
+{:f :cdr, :x 0, :y 4}
+{:f :cu, :x 0, :y 4}
+{:x 0, :y 4, :calling "get-at"}
+{:x 0, :y 3, :calling "get-at"}
+{:x 0, :y 2, :calling "get-at"}
+{:x 0, :y 1, :calling "get-at"}
+{:f :cd, :x 0, :y 4}
+{:x 0, :y 4, :calling "get-at"}
+{:x 0, :y 5, :calling "get-at"}
+{:x 0, :y 6, :calling "get-at"}
+{:x 0, :y 7, :calling "get-at"}
+{:f :cur, :x 0, :y 4}
+{:y-check true, :x-check true}
+{:x 0, :y 4, :calling "get-at"}
+{:x 1, :y 3, :calling "get-at"}
+{:x 2, :y 2, :calling "get-at"}
+{:x 3, :y 1, :calling "get-at"}
+{:f :cul, :x 0, :y 4}
+{:f :cdr, :x 0, :y 4}
+{:x 0, :y 4, :calling "get-at"}
+{:x 1, :y 5, :calling "get-at"}
+{:x 2, :y 6, :calling "get-at"}
+{:x 3, :y 7, :calling "get-at"}
+{:f :cdl, :x 0, :y 4}
+[nil true false false false nil false nil]
+{:x 0, :y 5, :calling "get-at"}
+{:f :cl, :x 0, :y 5}
+{:f :cdr, :x 0, :y 5}
+{:f :cu, :x 0, :y 5}
+{:x 0, :y 5, :calling "get-at"}
+{:x 0, :y 4, :calling "get-at"}
+{:x 0, :y 3, :calling "get-at"}
+{:x 0, :y 2, :calling "get-at"}
+{:f :cd, :x 0, :y 5}
+{:x 0, :y 5, :calling "get-at"}
+{:x 0, :y 6, :calling "get-at"}
+{:x 0, :y 7, :calling "get-at"}
+{:x 0, :y 8, :calling "get-at"}
+{:f :cur, :x 0, :y 5}
+{:y-check true, :x-check true}
+{:x 0, :y 5, :calling "get-at"}
+{:x 1, :y 4, :calling "get-at"}
+{:x 2, :y 3, :calling "get-at"}
+{:x 3, :y 2, :calling "get-at"}
+{:f :cul, :x 0, :y 5}
+{:f :cdr, :x 0, :y 5}
+{:x 0, :y 5, :calling "get-at"}
+{:x 1, :y 6, :calling "get-at"}
+{:x 2, :y 7, :calling "get-at"}
+{:x 3, :y 8, :calling "get-at"}
+{:f :cdl, :x 0, :y 5}
+[nil false false false true nil false nil]
+{:x 0, :y 6, :calling "get-at"}
+{:x 0, :y 7, :calling "get-at"}
+{:x 0, :y 8, :calling "get-at"}
+(0 0 0 0 1 1 0 0 0{:x 1, :y 0, :calling "get-at"}
+{:x 1, :y 1, :calling "get-at"}
+{:x 1, :y 2, :calling "get-at"}
+{:x 1, :y 3, :calling "get-at"}
+{:x 1, :y 4, :calling "get-at"}
+{:x 1, :y 5, :calling "get-at"}
+{:f :cl, :x 1, :y 5}
+{:f :cdr, :x 1, :y 5}
+{:f :cu, :x 1, :y 5}
+{:x 1, :y 5, :calling "get-at"}
+{:x 1, :y 4, :calling "get-at"}
+{:x 1, :y 3, :calling "get-at"}
+{:x 1, :y 2, :calling "get-at"}
+{:f :cd, :x 1, :y 5}
+{:x 1, :y 5, :calling "get-at"}
+{:x 1, :y 6, :calling "get-at"}
+{:x 1, :y 7, :calling "get-at"}
+{:x 1, :y 8, :calling "get-at"}
+{:f :cur, :x 1, :y 5}
+{:y-check true, :x-check true}
+{:x 1, :y 5, :calling "get-at"}
+{:x 2, :y 4, :calling "get-at"}
+{:x 3, :y 3, :calling "get-at"}
+{:x 4, :y 2, :calling "get-at"}
+{:f :cul, :x 1, :y 5}
+{:f :cdr, :x 1, :y 5}
+{:x 1, :y 5, :calling "get-at"}
+{:x 2, :y 6, :calling "get-at"}
+{:x 3, :y 7, :calling "get-at"}
+{:x 4, :y 8, :calling "get-at"}
+{:f :cdl, :x 1, :y 5}
+[nil false false false false nil false nil]
+{:x 1, :y 6, :calling "get-at"}
+{:x 1, :y 7, :calling "get-at"}
+{:x 1, :y 8, :calling "get-at"}
+ 0 0 0 0 0 0 0 0 0{:x 2, :y 0, :calling "get-at"}
+{:x 2, :y 1, :calling "get-at"}
+{:x 2, :y 2, :calling "get-at"}
+{:f :cl, :x 2, :y 2}
+{:f :cdr, :x 2, :y 2}
+{:f :cu, :x 2, :y 2}
+{:f :cd, :x 2, :y 2}
+{:x 2, :y 2, :calling "get-at"}
+{:x 2, :y 3, :calling "get-at"}
+{:x 2, :y 4, :calling "get-at"}
+{:x 2, :y 5, :calling "get-at"}
+{:f :cur, :x 2, :y 2}
+{:y-check false, :x-check true}
+{:f :cul, :x 2, :y 2}
+{:f :cdr, :x 2, :y 2}
+{:x 2, :y 2, :calling "get-at"}
+{:x 3, :y 3, :calling "get-at"}
+{:x 4, :y 4, :calling "get-at"}
+{:x 5, :y 5, :calling "get-at"}
+{:f :cdl, :x 2, :y 2}
+[nil false nil false nil nil false nil]
+{:x 2, :y 3, :calling "get-at"}
+{:x 2, :y 4, :calling "get-at"}
+{:x 2, :y 5, :calling "get-at"}
+{:x 2, :y 6, :calling "get-at"}
+{:x 2, :y 7, :calling "get-at"}
+{:f :cl, :x 2, :y 7}
+{:f :cdr, :x 2, :y 7}
+{:f :cu, :x 2, :y 7}
+{:x 2, :y 7, :calling "get-at"}
+{:x 2, :y 6, :calling "get-at"}
+{:x 2, :y 5, :calling "get-at"}
+{:x 2, :y 4, :calling "get-at"}
+{:f :cd, :x 2, :y 7}
+{:f :cur, :x 2, :y 7}
+{:y-check true, :x-check true}
+{:x 2, :y 7, :calling "get-at"}
+{:x 3, :y 6, :calling "get-at"}
+{:x 4, :y 5, :calling "get-at"}
+{:x 5, :y 4, :calling "get-at"}
+{:f :cul, :x 2, :y 7}
+{:f :cdr, :x 2, :y 7}
+{:f :cdl, :x 2, :y 7}
+[nil false false nil false nil nil nil]
+{:x 2, :y 8, :calling "get-at"}
+ 0 0 0 0 0 0 0 0 0{:x 3, :y 0, :calling "get-at"}
+{:x 3, :y 1, :calling "get-at"}
+{:x 3, :y 2, :calling "get-at"}
+{:x 3, :y 3, :calling "get-at"}
+{:x 3, :y 4, :calling "get-at"}
+{:x 3, :y 5, :calling "get-at"}
+{:x 3, :y 6, :calling "get-at"}
+{:x 3, :y 7, :calling "get-at"}
+{:x 3, :y 8, :calling "get-at"}
+ 0 0 0 0 0 0 0 0 0{:x 4, :y 0, :calling "get-at"}
+{:f :cl, :x 4, :y 0}
+{:f :cdr, :x 4, :y 0}
+{:f :cu, :x 4, :y 0}
+{:f :cd, :x 4, :y 0}
+{:x 4, :y 0, :calling "get-at"}
+{:x 4, :y 1, :calling "get-at"}
+{:x 4, :y 2, :calling "get-at"}
+{:x 4, :y 3, :calling "get-at"}
+{:f :cur, :x 4, :y 0}
+{:y-check false, :x-check true}
+{:f :cul, :x 4, :y 0}
+{:f :cdr, :x 4, :y 0}
+{:x 4, :y 0, :calling "get-at"}
+{:x 5, :y 1, :calling "get-at"}
+{:x 6, :y 2, :calling "get-at"}
+{:x 7, :y 3, :calling "get-at"}
+{:f :cdl, :x 4, :y 0}
+{:x 4, :y 0, :calling "get-at"}
+{:x 3, :y 1, :calling "get-at"}
+{:x 2, :y 2, :calling "get-at"}
+{:x 1, :y 3, :calling "get-at"}
+[false false nil false nil nil true false]
+{:x 4, :y 1, :calling "get-at"}
+{:f :cl, :x 4, :y 1}
+{:f :cdr, :x 4, :y 1}
+{:f :cu, :x 4, :y 1}
+{:f :cd, :x 4, :y 1}
+{:x 4, :y 1, :calling "get-at"}
+{:x 4, :y 2, :calling "get-at"}
+{:x 4, :y 3, :calling "get-at"}
+{:x 4, :y 4, :calling "get-at"}
+{:f :cur, :x 4, :y 1}
+{:y-check false, :x-check true}
+{:f :cul, :x 4, :y 1}
+{:f :cdr, :x 4, :y 1}
+{:x 4, :y 1, :calling "get-at"}
+{:x 5, :y 2, :calling "get-at"}
+{:x 6, :y 3, :calling "get-at"}
+{:x 7, :y 4, :calling "get-at"}
+{:f :cdl, :x 4, :y 1}
+{:x 4, :y 1, :calling "get-at"}
+{:x 3, :y 2, :calling "get-at"}
+{:x 2, :y 3, :calling "get-at"}
+{:x 1, :y 4, :calling "get-at"}
+[true false nil false nil nil false false]
+{:x 4, :y 2, :calling "get-at"}
+{:f :cl, :x 4, :y 2}
+{:f :cdr, :x 4, :y 2}
+{:f :cu, :x 4, :y 2}
+{:f :cd, :x 4, :y 2}
+{:x 4, :y 2, :calling "get-at"}
+{:x 4, :y 3, :calling "get-at"}
+{:x 4, :y 4, :calling "get-at"}
+{:x 4, :y 5, :calling "get-at"}
+{:f :cur, :x 4, :y 2}
+{:y-check false, :x-check true}
+{:f :cul, :x 4, :y 2}
+{:f :cdr, :x 4, :y 2}
+{:x 4, :y 2, :calling "get-at"}
+{:x 5, :y 3, :calling "get-at"}
+{:x 6, :y 4, :calling "get-at"}
+{:x 7, :y 5, :calling "get-at"}
+{:f :cdl, :x 4, :y 2}
+{:x 4, :y 2, :calling "get-at"}
+{:x 3, :y 3, :calling "get-at"}
+{:x 2, :y 4, :calling "get-at"}
+{:x 1, :y 5, :calling "get-at"}
+[false false nil false nil nil false false]
+{:x 4, :y 3, :calling "get-at"}
+{:x 4, :y 4, :calling "get-at"}
+{:x 4, :y 5, :calling "get-at"}
+{:x 4, :y 6, :calling "get-at"}
+{:x 4, :y 7, :calling "get-at"}
+{:x 4, :y 8, :calling "get-at"}
+ 1 1 0 0 0 0 0 0 0{:x 5, :y 0, :calling "get-at"}
+{:f :cl, :x 5, :y 0}
+{:f :cdr, :x 5, :y 0}
+{:f :cu, :x 5, :y 0}
+{:f :cd, :x 5, :y 0}
+{:x 5, :y 0, :calling "get-at"}
+{:x 5, :y 1, :calling "get-at"}
+{:x 5, :y 2, :calling "get-at"}
+{:x 5, :y 3, :calling "get-at"}
+{:f :cur, :x 5, :y 0}
+{:y-check false, :x-check true}
+{:f :cul, :x 5, :y 0}
+{:f :cdr, :x 5, :y 0}
+{:x 5, :y 0, :calling "get-at"}
+{:x 6, :y 1, :calling "get-at"}
+{:x 7, :y 2, :calling "get-at"}
+{:x 8, :y 3, :calling "get-at"}
+{:f :cdl, :x 5, :y 0}
+{:x 5, :y 0, :calling "get-at"}
+{:x 4, :y 1, :calling "get-at"}
+{:x 3, :y 2, :calling "get-at"}
+{:x 2, :y 3, :calling "get-at"}
+[false true nil false nil nil false false]
+{:x 5, :y 1, :calling "get-at"}
+{:x 5, :y 2, :calling "get-at"}
+{:x 5, :y 3, :calling "get-at"}
+{:x 5, :y 4, :calling "get-at"}
+{:x 5, :y 5, :calling "get-at"}
+{:f :cl, :x 5, :y 5}
+{:f :cdr, :x 5, :y 5}
+{:f :cu, :x 5, :y 5}
+{:x 5, :y 5, :calling "get-at"}
+{:x 5, :y 4, :calling "get-at"}
+{:x 5, :y 3, :calling "get-at"}
+{:x 5, :y 2, :calling "get-at"}
+{:f :cd, :x 5, :y 5}
+{:x 5, :y 5, :calling "get-at"}
+{:x 5, :y 6, :calling "get-at"}
+{:x 5, :y 7, :calling "get-at"}
+{:x 5, :y 8, :calling "get-at"}
+{:f :cur, :x 5, :y 5}
+{:y-check true, :x-check true}
+{:x 5, :y 5, :calling "get-at"}
+{:x 6, :y 4, :calling "get-at"}
+{:x 7, :y 3, :calling "get-at"}
+{:x 8, :y 2, :calling "get-at"}
+{:f :cul, :x 5, :y 5}
+{:x 5, :y 5, :calling "get-at"}
+{:x 4, :y 4, :calling "get-at"}
+{:x 3, :y 3, :calling "get-at"}
+{:x 2, :y 2, :calling "get-at"}
+{:f :cdr, :x 5, :y 5}
+{:x 5, :y 5, :calling "get-at"}
+{:x 6, :y 6, :calling "get-at"}
+{:x 7, :y 7, :calling "get-at"}
+{:x 8, :y 8, :calling "get-at"}
+{:f :cdl, :x 5, :y 5}
+{:x 5, :y 5, :calling "get-at"}
+{:x 4, :y 6, :calling "get-at"}
+{:x 3, :y 7, :calling "get-at"}
+{:x 2, :y 8, :calling "get-at"}
+[false false false false false false false false]
+{:x 5, :y 6, :calling "get-at"}
+{:x 5, :y 7, :calling "get-at"}
+{:x 5, :y 8, :calling "get-at"}
+{:f :cl, :x 5, :y 8}
+{:f :cdr, :x 5, :y 8}
+{:f :cu, :x 5, :y 8}
+{:x 5, :y 8, :calling "get-at"}
+{:x 5, :y 7, :calling "get-at"}
+{:x 5, :y 6, :calling "get-at"}
+{:x 5, :y 5, :calling "get-at"}
+{:f :cd, :x 5, :y 8}
+{:f :cur, :x 5, :y 8}
+{:y-check true, :x-check true}
+{:x 5, :y 8, :calling "get-at"}
+{:x 6, :y 7, :calling "get-at"}
+{:x 7, :y 6, :calling "get-at"}
+{:x 8, :y 5, :calling "get-at"}
+{:f :cul, :x 5, :y 8}
+{:x 5, :y 8, :calling "get-at"}
+{:x 4, :y 7, :calling "get-at"}
+{:x 3, :y 6, :calling "get-at"}
+{:x 2, :y 5, :calling "get-at"}
+{:f :cdr, :x 5, :y 8}
+{:f :cdl, :x 5, :y 8}
+[false false false nil false false nil nil]
+ 1 0 0 0 0 ...)
+clj꞉aoc2024.day4꞉> 
+; Evaluating file: day4.clj
+[\X \M \A \S \M \S \A \M \X]
+clj꞉aoc2024.day4꞉> 
+[nil true false false false nil false nil]
+[nil false false false true nil false nil]
+(0 0 0 0 1 1 0 0 0 0[nil false false false false nil false nil]
+[nil false false nil true nil nil nil]
+ 0 0 0 0 0 0 0 0 0 1[nil false nil false nil nil false nil]
+[nil false false nil false nil nil nil]
+ 0 0 0 0 0 0 0 0 0 0[false false false nil true true nil nil]
+ 0 0 0 0 0 0 0 0 0 2[false false nil false nil nil true false]
+[true false nil false nil nil false false]
+[false false nil false nil nil false false]
+ 1 1 0 0 0 0 0 0 0 0[false true nil false nil nil false false]
+[false false false false false false false false]
+[false false false nil false false nil nil]
+[false true false nil true true nil nil]
+ ...)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/get-at
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-up-left
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-right
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-down-left
+clj꞉aoc2024.day4꞉> 
+[nil true false false false nil false nil]
+[nil false false false true nil false nil]
+(0 0 0 0 1 1 0 0 0 0[nil false false false false nil false nil]
+[nil false false nil true nil nil nil]
+ 0 0 0 0 0 0 0 0 0 1[nil false nil false nil nil false nil]
+[nil false false nil false nil nil nil]
+ 0 0 0 0 0 0 0 0 0 0[false false false nil true true nil nil]
+ 0 0 0 0 0 0 0 0 0 2[false false nil false nil nil true false]
+[true false nil false nil nil false false]
+[false false nil false nil nil false false]
+ 1 1 0 0 0 0 0 0 0 0[false true nil false nil nil false false]
+[false false false false false false false false]
+[false false false nil false false nil nil]
+[false true false nil true true nil nil]
+ ...)
+clj꞉aoc2024.day4꞉> 
+(0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 1 1 0 0 0 0 0 0 0 0 ...)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/results
+clj꞉aoc2024.day4꞉> 
+[nil true false false false nil false nil]
+[nil false false false true nil false nil]
+(0 0 0 0 1 1 0 0 0 0[nil false false false false nil false nil]
+[nil false false nil true nil nil nil]
+ 0 0 0 0 0 0 0 0 0 1[nil false nil false nil nil false nil]
+[nil false false nil false nil nil nil]
+ 0 0 0 0 0 0 0 0 0 0[false false false nil true true nil nil]
+ 0 0 0 0 0 0 0 0 0 2[false false nil false nil nil true false]
+[true false nil false nil nil false false]
+[false false nil false nil nil false false]
+ 1 1 0 0 0 0 0 0 0 0[false true nil false nil nil false false]
+[false false false false false false false false]
+[false false false nil false false nil nil]
+[false true false nil true true nil nil]
+ ...)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/test-coords
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/results
+clj꞉aoc2024.day4꞉> 
+[nil true nil true nil nil true nil]
+[nil true true nil true nil nil nil]
+(3 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0[false false nil false nil nil false false]
+[false false false nil false false nil nil]
+ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ...)
+clj꞉aoc2024.day4꞉> 
+; [nil true nil true nil nil true nil]
+; [nil true true nil true nil nil nil]
+; [false false nil false nil nil false false]
+; [false false false nil false false nil nil]
+; [true nil nil true nil nil nil true]
+; [true nil true nil nil true nil nil]
+12
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/example
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/results
+clj꞉aoc2024.day4꞉> 
+; [nil true false false false nil false nil]
+; [nil false false false true nil false nil]
+; [nil false false false false nil false nil]
+; [nil false false nil true nil nil nil]
+; [nil false nil false nil nil false nil]
+; [nil false false nil false nil nil nil]
+; [false false false nil true true nil nil]
+; [false false nil false nil nil true false]
+; [true false nil false nil nil false false]
+; [false false nil false nil nil false false]
+; [false true nil false nil nil false false]
+; [false false false false false false false false]
+; [false false false nil false false nil nil]
+; [false true false nil true true nil nil]
+; [true false true false false false false false]
+; [false false false false false true false false]
+; [false nil false false nil false nil false]
+; [false nil false true nil false nil true]
+; [false nil true nil nil true nil nil]
+18
+clj꞉aoc2024.day4꞉> 
+18
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/part-one
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/part-one (form-init11802149751332764485.clj:115).
+; class clojure.lang.LazySeq cannot be cast to class clojure.lang.IFn (clojure.lang.LazySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/eval11730 (form-init11802149751332764485.clj:24).
+; class clojure.lang.LazySeq cannot be cast to class clojure.lang.IFn (clojure.lang.LazySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+; Execution error (ClassCastException) at aoc2024.day4/eval11736 (form-init11802149751332764485.clj:24).
+; class clojure.lang.LazySeq cannot be cast to class clojure.lang.IFn (clojure.lang.LazySeq and clojure.lang.IFn are in unnamed module of loader 'app')
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/coords
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/coords
+clj꞉aoc2024.day4꞉> 
+([0 0]
+ [0 1]
+ [0 2]
+ [0 3]
+ [0 4]
+ [0 5]
+ [0 6]
+ [0 7]
+ [0 8]
+ [0 9]
+ [1 0]
+ [1 1]
+ [1 2]
+ [1 3]
+ [1 4]
+ [1 5]
+ [1 6]
+ [1 7]
+ [1 8]
+ [1 9]
+ [2 0]
+ [2 1]
+ [2 2]
+ [2 3]
+ [2 4]
+ [2 5]
+ [2 6]
+ [2 7]
+ [2 8]
+ [2 9]
+ [3 0]
+ [3 1]
+ [3 2]
+ [3 3]
+ [3 4]
+ [3 5]
+ [3 6]
+ [3 7]
+ [3 8]
+ [3 9]
+ [4 0]
+ [4 1]
+ [4 2]
+ [4 3]
+ [4 4]
+ [4 5]
+ [4 6]
+ [4 7]
+ [4 8]
+ [4 9]
+ ...)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/part-one
+clj꞉aoc2024.day4꞉> 
+([0 0]
+ [0 1]
+ [0 2]
+ [0 3]
+ [0 4]
+ [0 5]
+ [0 6]
+ [0 7]
+ [0 8]
+ [0 9]
+ [1 0]
+ [1 1]
+ [1 2]
+ [1 3]
+ [1 4]
+ [1 5]
+ [1 6]
+ [1 7]
+ [1 8]
+ [1 9]
+ [2 0]
+ [2 1]
+ [2 2]
+ [2 3]
+ [2 4]
+ [2 5]
+ [2 6]
+ [2 7]
+ [2 8]
+ [2 9]
+ [3 0]
+ [3 1]
+ [3 2]
+ [3 3]
+ [3 4]
+ [3 5]
+ [3 6]
+ [3 7]
+ [3 8]
+ [3 9]
+ [4 0]
+ [4 1]
+ [4 2]
+ [4 3]
+ [4 4]
+ [4 5]
+ [4 6]
+ [4 7]
+ [4 8]
+ [4 9]
+ ...)
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/part-one
+clj꞉aoc2024.day4꞉> 
+18
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+; Execution error (IllegalArgumentException) at aoc2024.helpers/get-input (helpers.clj:6).
+; Cannot open <nil> as a Reader.
+clj꞉aoc2024.day4꞉> 
+; Evaluating file: day4.clj
+; 
+; Execution error (IllegalArgumentException) at aoc2024.helpers/get-input (helpers.clj:6).
+; Cannot open <nil> as a Reader.
+; Evaluation of file day4.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc2024.day4꞉> 
+18
+clj꞉aoc2024.day4꞉> 
+; Execution error (IllegalArgumentException) at aoc2024.helpers/get-input (helpers.clj:6).
+; Cannot open <nil> as a Reader.
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+([0 0]
+ [0 1]
+ [0 2]
+ [0 3]
+ [0 4]
+ [0 5]
+ [0 6]
+ [0 7]
+ [0 8]
+ [0 9]
+ [0 10]
+ [0 11]
+ [0 12]
+ [0 13]
+ [0 14]
+ [0 15]
+ [0 16]
+ [0 17]
+ [0 18]
+ [0 19]
+ [0 20]
+ [0 21]
+ [0 22]
+ [0 23]
+ [0 24]
+ [0 25]
+ [0 26]
+ [0 27]
+ [0 28]
+ [0 29]
+ [0 30]
+ [0 31]
+ [0 32]
+ [0 33]
+ [0 34]
+ [0 35]
+ [0 36]
+ [0 37]
+ [0 38]
+ [0 39]
+ [0 40]
+ [0 41]
+ [0 42]
+ [0 43]
+ [0 44]
+ [0 45]
+ [0 46]
+ [0 47]
+ [0 48]
+ [0 49]
+ ...)
+clj꞉aoc2024.day4꞉> 
+2685
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/directions
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-direction
+clj꞉aoc2024.day4꞉> 
+; Syntax error compiling at (src/aoc2024/day4.clj:134:1).
+; Unable to resolve symbol: _ in this context
+clj꞉aoc2024.day4꞉> 
+; Syntax error compiling at (src/aoc2024/day4.clj:134:1).
+; Unable to resolve symbol: _ in this context
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-direction
+clj꞉aoc2024.day4꞉> 
+#function[aoc2024.day4/fn--11857]
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-direction
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-position
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/part-one-old
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/part-one
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+2669
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-position
+clj꞉aoc2024.day4꞉> 
+2685
+clj꞉aoc2024.day4꞉> 
+; Evaluating file: day4.clj
+; 
+; Execution error (NullPointerException) at aoc2024.day4/fn (day4.clj:6).
+; Cannot invoke "Object.getClass()" because "x" is null
+; Evaluation of file day4.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/directions
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/get-at
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/coords
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/xmas
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-direction
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-position
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/part-one
+clj꞉aoc2024.day4꞉> 
+2685
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/grid
+clj꞉aoc2024.day4꞉> 
+nil
+clj꞉aoc2024.day4꞉> 
+; Evaluating file: day4.clj
+nil
+clj꞉aoc2024.day4꞉> 
+; Evaluating file: day4.clj
+nil
+clj꞉aoc2024.day4꞉> 
+(:up :down :left :right :up-right :up-left :down-right :down-left)
+clj꞉aoc2024.day4꞉> 
+; Syntax error reading source at (REPL:88:45).
+; Unmatched delimiter: ]
+clj꞉aoc2024.day4꞉> 
+; Syntax error reading source at (REPL:88:45).
+; Unmatched delimiter: ]
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-position
+clj꞉aoc2024.day4꞉> 
+2685
+clj꞉aoc2024.day4꞉> 
+#'aoc2024.day4/check-direction
+clj꞉aoc2024.day4꞉> 
